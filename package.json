@@ -17,8 +17,11 @@
     },
     "homepage": "https://github.com/catcrooke/liri-node-app#readme",
     "dependencies": {
+        "file-system": "^2.2.2",
+        "inquirer": "^2.0.0",
         "request": "^2.79.0",
         "spotify": "^0.3.0",
         "twitter": "^1.7.0"
-    }
+    },
+    "devDependencies": {}
 }
