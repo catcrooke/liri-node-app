@@ -16,6 +16,7 @@ var action = input[2];
 // create an object to hold all of the command line actions, each of which has its own function that 
 // contains the code needed to execute it
 var obj = {
+    // this action loads the last 20 tweets when run from the command line
     'my-tweets': function() {
         // code from the npm page required for user based authentication. To access each of the properties of the 
         // exports.twitterkeys object, this format must be used. 
@@ -39,32 +40,38 @@ var obj = {
                     console.log(tweets[i].text);
                     console.log('');
                 }
-                // if tweets don't load, log the error
+                // otherwise if tweets don't load, log the error
             } else {
                 console.log(error);
             }
         });
     },
+    // this action returns specified properties of a song when an argument is passed into its anonymous function.
     'spotify-this-song': function(argument) {
+        // from spotify, search using the following parameters: type and query. Set the query key equal to 
+        // argument, so that a track's information can be loaded with the spotify-this-song action
         spotify.search({
             type: 'track',
+            // if no song/argument is given, the default song that is loaded is The Sign by Ace of Base. 
             query: argument || 'the sign by ace of base'
+                // callback function
         }, function(error, data) {
+            // set the variable items equal to the properties that need to be accessed from the spotify data object
             var items = data.tracks.items;
-
+            // create a for loop to access the following information for each track that can be obtained from the user's query
             for (var i = 0; i < items.length; i++) {
-                // console.log(items[i]);
-
                 var item = items[i];
                 var artists = item.artists;
                 var preview = item.preview_url;
                 var songName = item.name;
                 var album = item.album.name;
-
+                // create a variable artistNames and set it equal to an empty array
                 var artistNames = [];
+                // create a second for loop to access the name for each track's artist
                 for (var j = 0; j < artists.length; j++) {
                     var artist = artists[j];
                     var artistName = artist.name;
+                    // 
                     artistNames.push(artistName);
                 }
                 artistNames = artistNames.join(", ");
