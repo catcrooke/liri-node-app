@@ -1,27 +1,25 @@
 {
-    "name": "package.json",
-    "version": "1.0.0",
-    "description": "This assignment involves making LIRI, like iPhone's SIRI, though instead SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives back data.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/catcrooke/liri-node-app.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/catcrooke/liri-node-app/issues"
-    },
-    "homepage": "https://github.com/catcrooke/liri-node-app#readme",
-    "dependencies": {
-        "file-system": "^2.2.2",
-        "inquirer": "^2.0.0",
-        "request": "^2.79.0",
-        "spotify": "^0.3.0",
-        "twitter": "^1.7.0"
-    },
-    "devDependencies": {}
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "This assignment involves making LIRI, like iPhone's SIRI, though instead SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives back data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catcrooke/liri-node-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catcrooke/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/catcrooke/liri-node-app#readme",
+  "dependencies": {
+    "request": "^2.79.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.0"
+  },
+  "devDependencies": {}
 }
