@@ -26,16 +26,20 @@ var obj = {
             access_token_secret: keysFile.twitterKeys.access_token_secret
         });
 
-        // more code 
+        // from the base code given on the npm page, setting screen_name to my twitter handle and giving a count of 20 
+        // tweets to be loaded
         var params = { catcrooke: 'nodejs', count: 20 };
+        // what should be loaded from twitter from the my-tweets action and the callback function
         client.get('statuses/user_timeline', params, function(error, tweets, response) {
+            // if there is no error, run this for-loop and console these values from the tweets. Add a blank console.log 
+            // with '' so that a space can be made between each of the returned tweets for legibility of text
             if (!error) {
                 for (var i = 0; i < tweets.length; i++) {
                     console.log(tweets[i].created_at);
                     console.log(tweets[i].text);
                     console.log('');
                 }
-
+                // if tweets don't load, log the error
             } else {
                 console.log(error);
             }
