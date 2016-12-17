@@ -1,23 +1,24 @@
-// At the top of the liri.js file, write the code needed to grab the data from keys.js. 
-// Then store the keys in a variable.
+// set a variable equal to the code needed to grab data from keys.js file:
 var keysFile = require('./keys.js');
+// set  variables equal to the node package managers needed for the project
 var Twitter = require('twitter');
 var spotify = require('spotify');
 var request = require('request');
 var fs = require('fs');
 var querystring = require('querystring');
-// var moment = require('moment')
 
 // // Takes in all of the command line arguments
 var input = process.argv;
 
-// // Parses the command line argument to capture the "action" ('my-tweets', 
-// 'spotify-this-song '<song name here>'', 'movie-this '<movie name here>'', 'do-what-it-says') 
-
+// Parses the command line argument to capture the "action" 
 var action = input[2];
 
+// create an object to hold all of the command line actions, each of which has its own function that 
+// contains the code needed to execute it
 var obj = {
     'my-tweets': function() {
+        // code from the npm page required for user based authentication. To access each of the properties of the 
+        // exports.twitterkeys object, this format must be used. 
         var client = new Twitter({
             consumer_key: keysFile.twitterKeys.consumer_key,
             consumer_secret: keysFile.twitterKeys.consumer_secret,
@@ -25,8 +26,7 @@ var obj = {
             access_token_secret: keysFile.twitterKeys.access_token_secret
         });
 
-        console.log(keysFile.twitterKeys.consumer_key);
-
+        // more code 
         var params = { catcrooke: 'nodejs', count: 20 };
         client.get('statuses/user_timeline', params, function(error, tweets, response) {
             if (!error) {
@@ -128,6 +128,3 @@ var obj = {
 };
 var modifier = process.argv[3];
 obj[action](modifier);
-// } else if (action === "do-what-it-says") {
-
-// }
