@@ -160,5 +160,5 @@ var obj = {
 };
 // set the variable modifier to process.argv[3] 
 var modifier = process.argv[3];
-// call the function which will allow any of the actions in the above object's functions to run when entered into the command line
+// call the function which will allow any of the actions in the above object to run when entered into the command line
 obj[action](modifier);
